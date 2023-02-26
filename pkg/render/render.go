@@ -7,7 +7,6 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
-
 	"github.com/eduzz/bookings/pkg/config"
 	"github.com/eduzz/bookings/pkg/models"
 )

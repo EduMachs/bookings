@@ -5,22 +5,23 @@ import (
 	"log"
 	"net/http"
 	"time"
-
 	"github.com/alexedwards/scs/v2"
-	"github.com/eduzz/bookings/pkg/config"
-
 	"github.com/eduzz/bookings/pkg/handlers"
 	"github.com/eduzz/bookings/pkg/render"
+	"github.com/eduzz/bookings/pkg/config"
 )
 
 const portNumber = ":8080"
+
 var app config.AppConfig
 var session *scs.SessionManager
 
 // main is the main function
 func main() {
+	// change this to true when in production
 	app.InProduction = false
 
+	// set up the session
 	session = scs.New()
 	session.Lifetime = 24 * time.Hour
 	session.Cookie.Persist = true
